@@ -1,0 +1,159 @@
+{
+  "name":"Kubernetes Auditing",
+  "namespace":"com.vmware.kubernetesauditing",
+  "contentPackId":"com.vmware.kubernetesauditing",
+  "framework":"#9c4",
+  "version":"2.4",
+  "extractedFields":[ ],
+  "queries":[ ],
+  "alerts":[ ],
+  "dashboardSections":[ {
+    "views":[ {
+      "name":"Kube Api server overview",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Error logs occuered over time period",
+          "info":"This widget provides total error logs found in kube api server over time range",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1671533490536,\"endTimeMillis\":1671535177690,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"log_type\",\"operator\":\"CONTAINS\",\"value\":\"kube_api_server\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"E*\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Total 200 status codes",
+          "info":"This widget provides total count of logs which are with status code equals 200",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1671533190537,\"endTimeMillis\":1671534202726,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"log_type\",\"operator\":\"CONTAINS\",\"value\":\"kube_api_server\"},{\"internalName\":\"text\",\"operator\":\"MATCH\",\"value\":\"^\\\\w\\\\d{4} [\\\\d:.]+[\\\\s]+ \\\\d \\\\w+.\\\\w+:\\\\d+] \\\\w+\\\\s.*\\\\(.*?\\\\) 200\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":null
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Total Audit logs count",
+          "info":"This widget provides total number of audit logs found in kube api server",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"AUDIT\",\"startTimeMillis\":1671533977692,\"endTimeMillis\":1671534315039,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"log_type\",\"operator\":\"CONTAINS\",\"value\":\"kube_api_server,kube_audit\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":null
+        }, {
+          "name":"Message Source Trend",
+          "info":"This widget provides trend of all different types of sources found in api server logs",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1671533977692,\"endTimeMillis\":1671534361968,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"log_type\",\"operator\":\"CONTAINS\",\"value\":\"kube_api_server\"},{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":null
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Severity breakdown",
+          "info":"This widget provides breakdown of severities occurred over the time range",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1671533490536,\"endTimeMillis\":1671535177690,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"log_type\",\"operator\":\"CONTAINS\",\"value\":\"kube_api_server\"},{\"internalName\":\"log_severity\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      } ],
+      "itemUuid":"002f387e-3ef9-390e-b94b-cda7e3a28fb5"
+    }, {
+      "name":"Kube Controller overview",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Total error logs",
+          "info":"This widget provides total error logs found in controller",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1671533490536,\"endTimeMillis\":1671535177690,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"log_type\",\"operator\":\"CONTAINS\",\"value\":\"kube_controller\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"E*\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Message severity Trend",
+          "info":"This widget provides trend of all controller logs and their severity over the time",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1671533490536,\"endTimeMillis\":1671535177690,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"log_type\",\"operator\":\"CONTAINS\",\"value\":\"kube_controller\"},{\"internalName\":\"log_severity\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Scale up operation over time",
+          "info":"This widget provides scale up operations performed over the time range",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Scaled up replica set\",\"startTimeMillis\":1671533977692,\"endTimeMillis\":1671534361968,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"log_type\",\"operator\":\"CONTAINS\",\"value\":\"kube_controller\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":null
+        }, {
+          "name":"Scale down operation over time",
+          "info":"This widget provides scale down operations performed over the time range",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Scaled down replica set\",\"startTimeMillis\":1671533490536,\"endTimeMillis\":1671535177690,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"log_type\",\"operator\":\"CONTAINS\",\"value\":\"kube_controller\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Pods successfully created over time",
+          "info":"This widget provides total pods created over the time range",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"reason: 'SuccessfulCreate' Created pod\",\"startTimeMillis\":1671533490536,\"endTimeMillis\":1671535177690,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"log_type\",\"operator\":\"CONTAINS\",\"value\":\"kube_controller\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Pods successfully deleted over time",
+          "info":"This widget provides total pods deleted over the time range",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"reason: 'SuccessfulDelete' Deleted pod\",\"startTimeMillis\":1671533490536,\"endTimeMillis\":1671535177690,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"log_type\",\"operator\":\"CONTAINS\",\"value\":\"kube_controller\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      } ],
+      "itemUuid":"d03d4fc0-ff7c-3f7d-acf5-cb86ab9bb4e7"
+    }, {
+      "name":"Kube Scheduler overview",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Pods failed scheduling",
+          "info":"This widget provides the trend of pods failed to scheduler over the time range",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"reason: 'FailedScheduling'\",\"startTimeMillis\":1671533490536,\"endTimeMillis\":1671535177690,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"log_type\",\"operator\":\"CONTAINS\",\"value\":\"kube_controller\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      } ],
+      "itemUuid":"b870c229-0911-32dd-b471-28e962d6256a"
+    } ],
+    "header":""
+  } ],
+  "aliasFields":[ ],
+  "aliasRules":[ ],
+  "author":"VMware",
+  "url":"",
+  "contentVersion":"1.0",
+  "info":"Kubernetes auditing provides content for audit logs, api server logs, scheduler logs and controller logs",
+  "instructions":"For the setup instruction please refer to the Log Sources -&gt; Containers -&gt; <a href=\"/log-sources/containers#item=2\">Kubernetes Auditing</a> on your on-premise vRealize Log Insight instance.&nbsp;",
+  "icon":"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"
+}
